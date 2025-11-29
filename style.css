@@ -1,0 +1,106 @@
+  /* تنسيقات عامة للجسم والخلفية */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* اختيار خط نظيف */
+}
+
+body {
+    background: linear-gradient(135deg, #153677, #4e085f); /* خلفية متدرجة وجذابة */
+    color: #333; /* لون نص أساسي */
+    direction: rtl; /* دعم اللغة العربية */
+}
+
+/* تنسيق الحاوية الرئيسية للتطبيق */
+.todo-app {
+    width: 100%;
+    max-width: 540px; /* تحديد عرض مناسب */
+    background: #fff;
+    margin: 100px auto 20px; /* توسيط الحاوية مع مساحة علوية */
+    padding: 40px 30px 70px;
+    border-radius: 10px; /* حواف دائرية */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* تنسيق العنوان */
+.todo-app h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* تنسيق حاوية الإدخال والزر */
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-right: 20px;
+    margin-bottom: 25px;
+}
+
+/* تنسيق حقل الإدخال */
+.row input {
+    flex: 1; /* للسماح للحقل بأخذ أكبر مساحة ممكنة */
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 12px;
+    font-size: 16px;
+    color: #555;
+}
+
+/* تنسيق زر "إضافة" */
+.row button {
+    border: none;
+    outline: none;
+    padding: 12px 30px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+/* تنسيق القائمة */
+#list-container {
+    list-style: none; /* إزالة التنقيط الافتراضي للقائمة */
+}
+
+/* تنسيق كل عنصر من عناصر المهمة */
+#list-container li {
+    font-size: 17px;
+    padding: 12px 8px 12px 50px; /* مساحة مناسبة للنص وأيقونة الإغلاق */
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+/* تنسيق علامة "مكتملة" (عند النقر عليها) */
+#list-container li.checked {
+    color: #555;
+    text-decoration: line-through; /* خط يتوسط النص */
+}
+
+/* تنسيق زر الحذف (\times) */
+#list-container li span {
+    position: absolute;
+    left: 10px; /* وضعه في اليسار (لأن الاتجاه RTL) */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+/* تأثير التمرير على زر الحذف */
+#list-container li span:hover {
+    background: #edeef0;
+}
